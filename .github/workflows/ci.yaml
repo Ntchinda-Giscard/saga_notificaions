@@ -5,7 +5,7 @@ on:
     branches: [ main, develop ]
     paths:
       - 'Notification/**'
-      - '.github/workflows/notification-service-ci-cd.yml'
+      - '.github/workflows/ci.yml'
   pull_request:
     branches: [ main ]
     paths:
