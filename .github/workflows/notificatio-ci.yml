@@ -19,9 +19,6 @@ env:
 jobs:
   build-test-deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./Notification
 
     steps:
       - name: Checkout code
@@ -79,7 +76,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: ./Notification
+          context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
